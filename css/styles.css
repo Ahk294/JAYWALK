@@ -1,0 +1,484 @@
+/* ************************** */
+/*                            */
+/*        styles.css          */
+/*                            */
+/*   By: ABDUL HASEEB KHAN    */
+/*         M00792907          */
+/*                            */
+/* ************************** */
+
+/* external stylesheet */
+
+/******************** common styles start ********************/
+
+/* importing font from Google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+/* universal styling */
+* {
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+}
+
+/* body styling */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #0b132b;
+  color: #6fffe9;
+}
+
+/* ::-webkit-scrollbar helps in selecting the scrollbar of the website to create custom scrollbars */
+body::-webkit-scrollbar {
+  /* setting the width for the scrollbar */
+  width: 10px;
+}
+
+/* selecting the track or the background of the scrollbar and setting it to a dark color */
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 10px #1c2541;
+}
+
+/* selecting the scrollbar thumb (which is used for moving up and down the page by dragging it) */
+body::-webkit-scrollbar-thumb {
+  /* setting a light color to the scrollbar thumb for better usability */
+  background-color: rgb(111, 255, 233);
+}
+
+/* styling all the content in the nav tag */
+nav {
+  font-weight: bold;
+  font-size: large;
+  background-color: #6fffe9;
+}
+
+/* specific styling for the navbar items which are in an unordered list */
+#navbar ul {
+  margin: 0;
+  padding: 0 80px;
+  overflow: hidden;
+}
+
+/* making the list items of the unordered list appear horizontally */
+#navbar li {
+  float: right;
+}
+
+/* styling for the appearance of link tags */
+#navbar li a {
+  text-decoration: none;
+  padding: 20px 20px;
+  display: inline-block;
+  transition: ease-in-out 0.3s;
+  color: #0b132b;
+}
+
+/* styling the link tags when hovered over using the pseudo class ':hover' */
+#navbar li a:hover {
+  background-color: #0b132b;
+  color: #6fffe9;
+}
+
+/* styling to show user which page they are on for better usability */
+.selected {
+  background-color: #0b132b;
+}
+
+/* common styling for all headings on all pages */
+.content h1 {
+  text-align: center;
+  margin-top: 15px;
+}
+
+/* styling the headings of all the pages except home */
+.heading {
+  letter-spacing: 5px;
+  margin-bottom: 2px;
+}
+
+/* styling the horizontal rule at the bottom of every page which indicates the footer */
+hr {
+  width: 85%;
+}
+
+/* common styling for all footers on all pages */
+.footer {
+  width: 100%;
+  /* position set to relative to make sure the footer does not appear over any other element */
+  position: relative;
+  bottom: 0;
+  padding-top: 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: large;
+}
+
+/* styling the content within the footer */
+.footer p {
+  margin-bottom: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* limiting the height of the spans in the footer for better design */
+.footer p span {
+  height: 30px;
+}
+
+/* styling used for the car image in the footer */
+.logo {
+  height: 45px;
+  position: relative;
+  top: -15px;
+  color: #6fffe9;
+}
+
+/******* the following two classes have been used to structure the content on the pages ******/
+
+/* surrounding the page content with a container for better control and styling */
+.container {
+  /* styling to center the entire page content */
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/******************** common styles end ********************/
+
+/******************** home/game page specific styles start ********************/
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/******* intro animation screen start *******/
+
+/* setting up the main screen for the animation */
+.intro {
+  /* position fixed so the animation can be entirely moved and hidden */
+  position: fixed;
+  /* placing the animation in front of everything */
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  backdrop-filter: blur(10px);
+  /* speed at which the animation screen will slide up */
+  transition: 1s;
+  background-color: #0b132b;
+}
+
+/* setting up the content of the animation screen */
+.intro_content {
+  font-size: 5rem;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  /* positioning the content to the center of the animation screen */
+  transform: translate(-50%, -50%);
+  color: #6fffe9;
+}
+
+/* this class is used to select and apply animation to the individual letters of the game name */
+.name {
+  /* this positioning of the spans will help in animating each letter with relation to the parent element*/
+  position: relative;
+  display: inline-block;
+  /* setting the starting postion and opacity of the text in animation */
+  bottom: -20px;
+  opacity: 0;
+}
+
+/* this class will be triggered by JavaScript to START the animation and 'fade-in' the text*/
+.name.fade-in {
+  /* changing the starting postion and opacity of the text during the animation*/
+  bottom: 0;
+  opacity: 1;
+  transition: ease-in-out 0.5s;
+}
+
+/* this class will be triggered by JavaScript to END the animation and 'fade-out' the text*/
+.name.fade-out {
+  /* changing the ending postion and opacity of the text during the animation*/
+  bottom: 200px;
+  opacity: 0;
+  transition: ease-in-out 0.5s;
+}
+
+/******* intro animation screen end *******/
+
+/* styling for the small box at the bottom of the screen on the home/game page */
+#rules_box {
+  position: relative;
+  left: 41.7%;
+  top: 475px;
+  width: 250px;
+  height: 50px;
+  font-weight: bold;
+  text-align: center;
+  border: #6fffe9 2px solid;
+  border-radius: 10px;
+  background-color: #1c2541;
+  color: #5bc0be;
+}
+
+/* styling for the content of the rules box */
+#rules_box p span:hover {
+  color: #6fffe9;
+}
+
+/******************** home/game page specific styles end ********************/
+
+/******************** common stylings for pages with forms start ********************/
+
+/* styling all the input fields */
+.form_content input {
+  width: 100%;
+  font-size: 20px;
+  border-radius: 5px;
+  background: transparent;
+  padding: 10px;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #6fffe9;
+  transition: 5000s ease-in-out 0s;
+  color: #6fffe9;
+}
+
+/* styling for input fields to avoid white background upon autofill by the browser */
+.form_content input:-webkit-autofill {
+  /* the transition to the default white background is just delayed here, thereby, making it look more professional and consistent */
+  transition: 5000s ease-in-out 0s;
+}
+
+/* the '::placeholder' selector is used to style the placeholder text in the input fields */
+::placeholder {
+  text-align: center;
+  font-size: 15px;
+  color: #5bc0be;
+}
+
+/* all the input fields are in a container called 'form_content' */
+.form_content .input_content {
+  margin-bottom: 20px;
+}
+
+/* styling the input field which the user is focused on */
+.form_content input:focus {
+  border-color: #0b132b;
+}
+
+/* styling the form buttons */
+.form_content .btn_form {
+  width: 100%;
+  padding: 10px;
+  border: 0;
+  border-radius: 5px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  transition: ease-in-out 0.2s;
+  background: #6fffe9;
+  color: #0b132b;
+}
+
+/* styling the form buttons when hovered over */
+.form_content .btn_form:hover {
+  cursor: pointer;
+  background: #0b132b;
+  color: #6fffe9;
+}
+
+/* specific styling for the footers of pages with forms to achive the desired design */
+#footer_fixed {
+  position: absolute;
+  bottom: 0;
+}
+
+/* styling the 'confirm account' text below the forms */
+.account_conf {
+  display: flex;
+  justify-content: center;
+}
+
+/* styling the p tag to achieve the desired design */
+.account_conf p {
+  font-size: small;
+  margin: 0;
+  color: #5bc0be;
+}
+
+/* styling the a tag to make it stand out a little */
+.account_conf p a {
+  color: #6fffe9;
+}
+
+/******************** common stylings for pages with forms end ********************/
+
+/******************** register page specific styles start ********************/
+
+/* styling the register form */
+.registration_form {
+  padding: 10px;
+  border-radius: 10px;
+  width: 700px;
+  background: #1c2541;
+  color: #6fffe9;
+}
+
+/* styling the input fields that have been grouped together in a class called 'input_group' */
+.form_content .input_group {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* setting all input fields that are grouped together to the same width */
+.form_content .input_group input {
+  width: 300px;
+}
+
+/* styling the label for gender selection */
+#gender_label {
+  display: block;
+  text-align: center;
+}
+
+/* styling the radio button inputs */
+.form_content ul {
+  padding: 8px 10px;
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  border-radius: 20px;
+  list-style: none;
+  background: #5bc0be;
+}
+
+/* adding space only after the first li radio button using the pseudo class ':first-child' */
+.form_content ul li:first-child {
+  margin-right: 35px;
+}
+
+/* removing margin from bottom of the radio buttons to vertically center them */
+.form_content ul .radio_content {
+  position: relative;
+  margin-bottom: 0;
+}
+
+/* setting the 'button' in radio buttons to invisible and centering them */
+.form_content ul .radio_content .input_radio {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/* postioning the labels of the radio buttons right next to each other */
+.form_content ul .radio_content span {
+  display: inline-block;
+  padding: 5px 80px;
+  border-radius: 10px;
+  color: #0b132b;
+}
+
+/* changes the background and color of the span (radio button label) when the respective radio button is selected 
+the '+' sign is used to specify that the styling must be applied only to the immediate sibling of the selected 
+radio button */
+.form_content .input_radio:checked + span {
+  transition: ease-in-out 0.2s;
+  background: #0b132b;
+  color: #6fffe9;
+}
+
+.pass_check {
+  position: absolute;
+  bottom: 190px;
+  left: 1000px;
+}
+
+/******************** register page specific styles end ********************/
+
+/******************** sign in page specific styles start ********************/
+
+/* styling the sign in form */
+.signIn_form {
+  padding: 30px;
+  border-radius: 10px;
+  width: 500px;
+  background: #1c2541;
+  color: #6fffe9;
+}
+
+/******************** sign in page specific styles end ********************/
+
+/******************** leaderboard page specific styles start ********************/
+
+/* styling the leaderboard page to center the table */
+#leaderboard {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+/* giving the div containing the table a fixed width and font size */
+#leaderboard div {
+  width: 80%;
+  font-size: 25px;
+}
+
+/* stretching table to cover the entire div and removing the default HTML borders */
+#leaderboard table {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+}
+
+/* styling the table header */
+#leaderboard th {
+  height: 80px;
+  color: #0b132b;
+  border: 2px solid #5bc0be;
+  background: rgb(111, 255, 233);
+}
+
+/* styling the table data tags */
+#leaderboard td {
+  height: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  border: 2px solid #5bc0be;
+  color: #6fffe9;
+  background: #0b132b;
+}
+
+/* styling table footer */
+#leaderboard tfoot td {
+  font-weight: normal;
+  background: #1c2541;
+}
+
+/******************** leaderboard page specific styles end ********************/
+
+/******************** how to play page specific styles start ********************/
+
+/* styling the how to play page */
+.howToPlay {
+  padding: 10px 10px;
+  border-radius: 10px;
+  font-size: 20px;
+  width: 900px;
+  background: #1c2541;
+}
+
+/* adding space after each list items for better readability */
+.howToPlay li {
+  margin-bottom: 20px;
+}
+
+/******************** how to play page specific styles end ********************/

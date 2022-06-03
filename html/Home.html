@@ -1,0 +1,156 @@
+<!-- 
+/* ************************** */
+/*                            */
+/*         Home.html          */
+/*                            */
+/*   By: ABDUL HASEEB KHAN    */
+/*         M00792907          */
+/*                            */
+/* ************************** */ 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JAYWALK</title>
+    <link rel="stylesheet" href="../css/styles.css" type="text/css" />
+
+    <!-- CDN link of Font Awesome for the icons used in the website -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+
+    <!-- embeded styling used only for the game frame in the home page -->
+    <style>
+      #game_frame {
+        border: #6fffe9 2px solid;
+        border-radius: 10px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 1000px;
+        height: 475px;
+        background-color: black;
+        transform: translate(-50%, -41%);
+      }
+
+      #game_frame h1 {
+        text-align: center;
+        position: relative;
+        top: 25%;
+      }
+
+      #game_frame h2 {
+        display: flex;
+        justify-content: space-between;
+        color: white;
+      }
+
+      #game_frame h2 span {
+        position: relative;
+        top: -25px;
+        margin: 15px;
+      }
+
+      #game_frame h2 span i {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="intro">
+      <h1 class="intro_content">
+        <span class="name">J</span>
+        <span class="name">A</span>
+        <span class="name">Y</span>
+        <span class="name">W</span>
+        <span class="name">A</span>
+        <span class="name">L</span>
+        <span class="name">K</span>
+      </h1>
+    </div>
+    <!-- navigation bar -->
+    <header>
+      <nav>
+        <div id="navbar">
+          <ul>
+            <li id="sign_out">
+              <a href="#signOut" onclick="signOutUser()">
+                <i class="fas fa-sign-out-alt"></i> Sign Out
+              </a>
+            </li>
+            <li>
+              <a href="SignIn.html"
+                ><i class="fas fa-sign-in-alt"></i> Sign In</a
+              >
+            </li>
+            <li>
+              <a href="Register.html"
+                ><i class="fas fa-user-plus"></i> Register</a
+              >
+            </li>
+            <li>
+              <a href="Leaderboard.html"
+                ><i class="fas fa-trophy"></i> Leaderboard</a
+              >
+            </li>
+            <li>
+              <a href="HowToPlay.html"
+                ><i class="fas fa-question"></i> How To Play</a
+              >
+            </li>
+            <li style="float: left">
+              <a class="selected" style="color: #6fffe9" href="Home.html"
+                ><i class=""></i> JAYWALK</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- home/game page content -->
+    <div id="home_content" class="content">
+      <h1 id="display_username">You are playing as: <u>Guest</u></h1>
+      <!-- placeholder div in place of the actual game -->
+      <div id="game_frame">
+        <h2>
+          <span>
+            <i class="fas fa-heart"></i> <i class="fas fa-heart"></i>
+            <i class="fas fa-heart"></i>
+          </span>
+          <span> Score: 120 </span>
+        </h2>
+        <h1>GAME</h1>
+      </div>
+      <div id="rules_box">
+        <p>
+          <span><i class="fas fa-skull"></i> -5 POINTS </span> |
+          <span><i class="fab fa-gratipay"></i> +10 POINTS</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer>
+      <div class="footer">
+        <hr />
+        <p>
+          <span>Best resolution for this site: 1366 x 661</span>
+          <span
+            ><img src="../images/JAYWALK_LOGO.PNG" alt="logo" class="logo"
+          /></span>
+          <span>&copy;Abdul Haseeb Khan - M00792907</span>
+        </p>
+      </div>
+    </footer>
+
+    <!-- javascript src -->
+    <script src="../js/app.js"></script>
+    <script src="../js/home.js"></script>
+  </body>
+</html>
